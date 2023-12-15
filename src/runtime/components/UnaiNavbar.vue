@@ -23,6 +23,7 @@
   </nav>
 </template>
 <script setup>
+import { defineProps, ref } from "vue";
 import UnaiHamburger from "./UnaiHamburger.vue";
 
 const props = defineProps({
