@@ -20,7 +20,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {},
   async setup (options, nuxt) {
     const resolver = createResolver(import.meta.url)
-    nuxt.options.css.push(resolver.resolve('./runtime/styles/global.scss'));
+    nuxt.options.css.push(resolver.resolve('./runtime/styles/global.css'));
     
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'));
