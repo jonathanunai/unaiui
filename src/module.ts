@@ -7,7 +7,7 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'unaiui',
     configKey: 'unaiui',
-    version: "1.0"
+    version: "0.10"
   },
   hooks: {
     'components:dirs'(dirs) {
