@@ -1,4 +1,15 @@
 
+:root {
+    --primary-color: #0d0b52;
+    --secondary-color: #3458b9;
+    --font-color: #424242;
+    --bg-color: #ffffff;
+    --heading-color: #292922;
+    --white-color: #ffffff;
+    --navbarHeight: 64px;
+    --viewport-large: 788;
+  }
+  
 html,
 body {
   height: 100%;
