@@ -42,7 +42,6 @@ onMounted(() => {
   align-items: center;
   flex-direction: column;
   background: linear-gradient(to bottom, #c2b280 0%, #b3a371 100%);
-  background-image: url("/tierradeesparto.jpeg");
   background-size: cover;
   background-position: center;
 

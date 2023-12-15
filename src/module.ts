@@ -7,7 +7,6 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'unaiui',
     configKey: 'unaiui',
-    version: "0.10"
   },
   hooks: {
     'components:dirs'(dirs) {
@@ -21,14 +20,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {},
   async setup (options, nuxt) {
     const resolver = createResolver(import.meta.url)
-    nuxt.options.css.push(resolver.resolve('./runtime/styles/_vars.scss'));
     nuxt.options.css.push(resolver.resolve('./runtime/styles/global.scss'));
-    // nuxt.options.publicAssets ||= [];
-    // nuxt.options.publicAssets.push({
-    //   dir: resolver.resolve("./runtime/assets"),
-    //   maxAge: 60 * 60 * 24 * 30,
-    //   fallthrough: true,
-    // });
     
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'));
