@@ -6,7 +6,7 @@
     <div class="footer">
       <slot></slot>
     </div>
-    <div class="afterfooter">
+    <div class="afterfooter">foo
       <slot name="afterfooter"></slot>
     </div>
   </div>
