@@ -1,5 +1,5 @@
 <template>
-  <nav :class="mobileMenuState ? 'open' : ''">
+  <nav :class="mobileMenuState ? 'open' : ''" :style="{opacity: props.opacity}">
     <div class="navbar-container">
       <unai-hamburger @click="openMenu" />
       <ul 
@@ -31,6 +31,10 @@ const props = defineProps({
     type: Array,
     default: () => []
   },
+  opacity: {
+    type: Number,
+    default: 0.95
+  }
 });
 
 const mobileMenuState = ref(false);
@@ -49,7 +53,6 @@ body {
   padding-top: var(--navbarHeight);
 }
 nav {
-  opacity: 0.95;
   position: fixed;
   width: 100%;
   background: #fff;

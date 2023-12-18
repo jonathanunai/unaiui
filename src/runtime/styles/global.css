@@ -6,6 +6,8 @@
     --bg-color: #ffffff;
     --heading-color: #292922;
     --white-color: #ffffff;
+    --pal-red: #EE2A35;
+    --pal-green: #009736;
     --navbarHeight: 64px;
     --viewport-large: 788;
   }
@@ -13,7 +15,7 @@
 html,
 body {
   height: 100%;
-  margin: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -21,8 +23,11 @@ body {
   background: var(--bg-color);
   color: var(--font-color);
   box-sizing: border-box;
-  line-height: 1.5;
+  font-size: 150%;
+  line-height: 1.4;
   overflow-x: hidden;
+  margin: 0;
+
   * {
     color: inherit;
   }
@@ -49,6 +54,13 @@ p {
   -webkit-box-decoration-break: clone;
   font-size: 1.2rem;
   margin: 1rem 0;
+}
+.coverer {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 @media (max-width: (var(--viewport-large) - 1)) {
