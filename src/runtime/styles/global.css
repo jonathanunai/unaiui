@@ -62,6 +62,12 @@ p {
   left: 0;
   position: absolute;
 }
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 @media (max-width: (var(--viewport-large) - 1)) {
   html {

@@ -1,9 +1,33 @@
 <template>
-  <div class="hamburger-wrapper">
+  <div class="hamburger-wrapper" :class="classes">
     <div class="hamburger"></div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { computed } from "vue";
+const props = defineProps({
+  showHamburgerAlways: {
+    type: Boolean,
+    default: true,
+  },
+  color: {
+    type: String,
+    default: "",
+  },
+});
+const classes = computed(() => {
+  return [props.showHamburgerAlways ? "" : "only-mobile"];
+});
+const color = computed(() => {
+  return (props.color) ?  props.color : "var(--hamburger-color)";
+});
+</script>
+
 <style lang="scss">
+:root {
+  --hamburger-color: #212121;
+}
 .hamburger-wrapper {
   display: flex;
   justify-content: center;
@@ -17,12 +41,19 @@
 .hamburger::before,
 .hamburger::after {
   display: block;
-  background-color: #333;
+  background-color: v-bind(color);
   position: absolute;
   height: 4px;
   width: 30px;
   transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 2px;
+}
+.dark {
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    background-color: var(--white-color);
+  }
 }
 
 .hamburger::before {
@@ -54,7 +85,9 @@
 
 @media (min-width: 769px) {
   .hamburger-wrapper {
-    display: none;
+    &.only-mobile {
+      display: none;
+    }
   }
 }
 </style>

@@ -17,6 +17,7 @@
         {{ props.title }}
         <span> {{ props.subtitle }} </span>
       </h1>
+      <slot></slot>
     </div>
   </header>
 </template>
@@ -53,6 +54,8 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  position: relative;
 }
 h1 {
   font-family: "Syncopate", sans-serif;

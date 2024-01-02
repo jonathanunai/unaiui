@@ -1,7 +1,8 @@
 <template>
-  <div class="hero justify-center align-center px-4">
-    <h2>{{ props.title }}</h2>
+  <div class="hero">
+    <h2 v-html="props.title" class="title"></h2>
     <span class="subheading">{{ props.subtitle }}</span>
+    <slot></slot>
   </div>
 </template>
 <script setup>
@@ -36,15 +37,15 @@ onMounted(() => {
   position: relative;
   height: v-bind(height);
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(to bottom, #c2b280 0%, #b3a371 100%);
+  background: linear-gradient(to bottom, #212121 0%, #424242 100%);
   background-size: cover;
   background-position: center;
-
+  text-align: center;
+  text-transform: uppercase;
   .subheading {
     font-size: 1.4rem;
     z-index: 15;
