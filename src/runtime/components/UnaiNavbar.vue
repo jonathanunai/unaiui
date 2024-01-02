@@ -158,7 +158,7 @@ nav {
         max-width: 100%;
         height: 100%;
         order: 2;
-        display: flex;
+        display: none;
         transform: translate(0%);
         box-shadow: none;
         li {
