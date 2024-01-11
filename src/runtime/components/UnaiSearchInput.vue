@@ -1,39 +1,73 @@
 <template>
-  <form onsubmit="event.preventDefault();" role="search">
+  <form
+    onsubmit="event.preventDefault();"
+    role="search"
+    :class="focused ? 'focused' : ''"
+  >
     <label for="search">Search</label>
     <input
       id="searchWhyto"
+      ref="searchWhyto"
       type="search"
       placeholder="Search..."
-      autofocus
       required
-      v-model="model"
+      :value="model"
+      @input="(evt) => (model = evt.target.value)"
     />
-    <button type="submit">Go</button>
+    <button type="submit" @click="$emit('search')">Go</button>
+    <slot></slot>
   </form>
 </template>
 <script setup>
-const model = defineModel()
+import { useFocus } from "@vueuse/core";
+
+const model = defineModel();
+const searchWhyto = ref();
+
+const { focused } = useFocus(searchWhyto, { initialValue: false });
+
+const inputWithFocus = () => {
+  console.log("inputWithFocus");
+};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 form {
   --rad: 0.7rem;
   --dur: 0.3s;
-  --color-dark: #2f2f2f;
-  --color-light: #fff;
   --font-fam: "Lato", sans-serif;
   --height: 5rem;
   --btn-width: 6rem;
   --bez: cubic-bezier(0, 0, 0.43, 1.49);
 
-  position: relative;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 30rem;
-  max-width: 87%;
-  background: var(--secondary-color);
+  max-width: 80%;
   border-radius: var(--rad);
   margin-top: 2rem;
   text-align: left;
+  transition: all 0.4s ease-in-out;
+
+  &.focused {
+    position: fixed;
+    top: 60px;
+    max-width: 90%;
+    width: 45rem;
+
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s ease-in-out;
+
+    input {
+      margin: 0 auto;
+    }
+    button {
+    }
+  }
 }
 input,
 button {
@@ -42,6 +76,7 @@ button {
   border: 0;
   color: var(--color-dark);
   font-size: 1.8rem;
+  transition: all 0.4s ease-in-out;
 }
 input[type="search"] {
   width: 100%;
