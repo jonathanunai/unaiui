@@ -46,6 +46,15 @@ const props = defineProps({
   width: 100vw;
   height: 100vh;
 }
+.video-header::before {
+    position:absolute;
+    content:'';
+    top:0;bottom:0;left:0;right:0;
+    background-image: linear-gradient(22deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-size: 4px 4px;
+    z-index: 1;
+}
+
 video {
     background: brown;
     object-fit: cover;
@@ -56,6 +65,7 @@ video {
   justify-content: center;
   flex-direction: column;
   position: relative;
+  z-index: 2;
 }
 h1 {
   font-family: "Syncopate", sans-serif;
