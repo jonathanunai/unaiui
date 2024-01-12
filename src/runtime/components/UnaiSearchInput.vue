@@ -20,15 +20,13 @@
 </template>
 <script setup>
 import { useFocus } from "@vueuse/core";
+import { defineModel, ref } from "vue";
 
 const model = defineModel();
 const searchWhyto = ref();
 
 const { focused } = useFocus(searchWhyto, { initialValue: false });
 
-const inputWithFocus = () => {
-  console.log("inputWithFocus");
-};
 </script>
 
 <style scoped lang="scss">
