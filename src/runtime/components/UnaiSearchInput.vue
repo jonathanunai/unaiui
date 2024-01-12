@@ -2,7 +2,7 @@
   <form
     onsubmit="event.preventDefault();"
     role="search"
-    :class="focused ? 'focused' : ''"
+    :class="focused || focusedSlot ? 'focused' : ''"
   >
     <label for="search">Search</label>
     <input
@@ -15,7 +15,7 @@
       @input="(evt) => (model = evt.target.value)"
     />
     <button type="submit" @click="$emit('search')">Go</button>
-    <slot></slot>
+    <div class="slot-wrapper" ref="slotLayer"><slot></slot></div>
   </form>
 </template>
 <script setup>
@@ -24,9 +24,10 @@ import { defineModel, ref } from "vue";
 
 const model = defineModel();
 const searchWhyto = ref();
+const slotLayer = ref();
 
 const { focused } = useFocus(searchWhyto, { initialValue: false });
-
+const { focusedSlot } = useFocus(slotLayer, { initialValue: false });
 </script>
 
 <style scoped lang="scss">
@@ -48,6 +49,7 @@ form {
   margin-top: 2rem;
   text-align: left;
   transition: all 0.4s ease-in-out;
+  transition-delay: 0.5s;
 
   &.focused {
     position: fixed;
@@ -59,6 +61,7 @@ form {
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.4s ease-in-out;
+    transition-delay: 0s;
 
     input {
       margin: 0 auto;

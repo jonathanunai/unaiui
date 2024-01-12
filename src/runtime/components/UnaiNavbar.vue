@@ -10,7 +10,7 @@
         :showHamburgerAlways="props.showHamburgerAlways"
         :color="props.color"
       />
-      <div class="logo">
+      <div class="logoSlot">
         <slot></slot>
       </div>
 
@@ -22,7 +22,7 @@
         </li>
       </ul>
     </div>
-      <unai-slide-menu :links="props.links" />
+    <unai-slide-menu :links="props.links" />
   </nav>
 </template>
 <script setup>
@@ -94,10 +94,12 @@ nav {
     height: 100%;
     width: 100%;
     justify-content: space-between;
-    .logo {
+    .logoSlot {
       width: 100%;
       text-align: center;
-      font-size: 8rem;
+      justify-content: center;
+      align-items: center;
+      display: flex;
     }
     .menu-items {
       display: none;
@@ -149,7 +151,6 @@ nav {
     .navbar-container.show-desktop-menu {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       .menu-items {
         padding: 0;
         margin: 0;
@@ -169,13 +170,6 @@ nav {
           display: flex;
         }
       }
-    }
-    .logo {
-      position: relative;
-      order: 1;
-      top: unset;
-      right: unset;
-      margin: 0;
     }
   }
 }
