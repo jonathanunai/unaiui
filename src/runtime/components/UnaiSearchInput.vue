@@ -21,7 +21,7 @@
 <script setup>
 import { useFocus } from "@vueuse/core";
 
-import { defineModel, ref } from "vue";
+import { defineModel, ref, watch } from "vue";
 
 const model = defineModel();
 const searchWhyto = ref();
