@@ -20,6 +20,7 @@
 </template>
 <script setup>
 import { useFocus } from "@vueuse/core";
+
 import { defineModel, ref } from "vue";
 
 const model = defineModel();
@@ -28,6 +29,15 @@ const slotLayer = ref();
 
 const { focused } = useFocus(searchWhyto, { initialValue: false });
 const { focusedSlot } = useFocus(slotLayer, { initialValue: false });
+const scrollTop = () => {
+  window.scrollTo(0, 0);
+};
+watch(focused, async () => {
+  if (focused.value) {
+    console.log("focused !!!!:>> ", focused);
+    scrollTop();
+  }
+});
 </script>
 
 <style scoped lang="scss">
@@ -49,7 +59,7 @@ form {
   margin-top: 2rem;
   text-align: left;
   transition: all 0.4s ease-in-out;
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
 
   &.focused {
     position: fixed;
