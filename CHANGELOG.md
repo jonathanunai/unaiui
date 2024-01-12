@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.24
+
+[compare changes](https://github.com/jonathanunai/unaiui/compare/v0.0.23...v0.0.24)
+
+### 🏡 Chore
+
+- **release:** V0.0.23 ([cd32465](https://github.com/jonathanunai/unaiui/commit/cd32465))
+
+### ❤️ Contributors
+
+- Jonathan Marquez <jonathan.marquez@ellos.se>
+
 ## v0.0.23
 
 [compare changes](https://github.com/jonathanunai/unaiui/compare/v0.0.22...v0.0.23)
