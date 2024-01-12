@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.0.22
+
+[compare changes](https://github.com/jonathanunai/unaiui/compare/v0.0.21...v0.0.22)
+
 ## v0.0.21
 
 [compare changes](https://github.com/jonathanunai/unaiui/compare/v0.0.17...v0.0.21)
