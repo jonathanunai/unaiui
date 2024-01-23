@@ -2,7 +2,7 @@
   <form
     onsubmit="event.preventDefault();"
     role="search"
-    :class="focused || focusedSlot ? 'focused' : ''"
+    :class="focused || focusedSlot || model ? 'focused' : ''"
   >
     <label for="search">Search</label>
     <input
@@ -29,15 +29,7 @@ const slotLayer = ref();
 
 const { focused } = useFocus(searchWhyto, { initialValue: false });
 const { focusedSlot } = useFocus(slotLayer, { initialValue: false });
-const scrollTop = () => {
-  window.scrollTo(0, 0);
-};
-watch(focused, async () => {
-  if (focused.value) {
-    console.log("focused !!!!:>> ", focused);
-    scrollTop();
-  }
-});
+
 </script>
 
 <style scoped lang="scss">
@@ -62,13 +54,12 @@ form {
   transition-delay: 0.2s;
 
   &.focused {
-    position: fixed;
     top: 60px;
-    max-width: 90%;
-    width: 45rem;
-
-    height: 100vh;
     left: 50%;
+    height: 100vzh;
+    width: 45rem;
+    max-width: 90%;
+
     transform: translateX(-50%);
     transition: all 0.4s ease-in-out;
     transition-delay: 0s;
@@ -91,7 +82,7 @@ button {
 }
 input[type="search"] {
   width: 100%;
-  background: var(--color-light);
+  background: var(--color-white);
   padding: 0 1.6rem;
   border-radius: var(--rad);
   appearance: none;

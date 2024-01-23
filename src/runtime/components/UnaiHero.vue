@@ -62,21 +62,21 @@ onMounted(() => {
   }
 
   .title {
-    text-align: center;
-    font-size: 2rem;
-    top: 50%;
-    z-index: 15;
+    top: 45%;
+    font-size: 2.6rem;
+    line-height: 2.6rem;
+    font-weight: 300;
+    font-family: 'Bangers', system-ui;
     color: #fff;
-    font-family: "Olivetti";
+    text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
-    font-weight: 300;
-    padding-right: 0.8rem;
-    font-family: "Dancing Script", cursive;
+    z-index: 15;
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 
     @media (min-width: 450px) {
-      font-size: 3.2rem;
+      font-size: 3.8rem;
+      line-height: 3.8rem;
     }
   }
 

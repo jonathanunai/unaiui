@@ -52,7 +52,7 @@ const color = computed(() => {
   .hamburger,
   .hamburger::before,
   .hamburger::after {
-    background-color: var(--white-color);
+    background-color: var(--color-white);
   }
 }
 

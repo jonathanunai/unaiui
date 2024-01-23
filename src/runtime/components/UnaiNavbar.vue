@@ -59,9 +59,6 @@ const props = defineProps({
 const slideMenuState = ref(false);
 const menuItems = ref(null);
 
-function handleFocusOut() {
-  slideMenuState.value = false;
-}
 function openMenu() {
   slideMenuState.value = !slideMenuState.value;
   if (slideMenuState.value) menuItems.value.focus();
@@ -69,12 +66,15 @@ function openMenu() {
 const styles = computed(() => {
   return {
     "--navbarHeight": "60px",
-    "--white-color":
+    "--color-white":
       props.background === "transparent" ? "rgba(0,0,0,0)" : props.background,
     "--font-color": props.dark ? "#fff" : "#000",
     opacity: props.opacity,
   };
 });
+
+
+
 </script>
 <style lang="scss" scoped>
 body {
@@ -83,11 +83,16 @@ body {
 nav {
   position: fixed;
   width: 100%;
-  background: var(--white-color);
+  background: var(--color-white);
   color: var(--font-color);
   height: var(--navbarHeight);
   z-index: 12;
   top: 0;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease-out;
+  &.navbar_hidden {
+    transform: translate3d(0, -100%, 0);
+  }
   .navbar-container {
     display: flex;
     position: relative;
@@ -126,7 +131,7 @@ nav {
         list-style: none;
         max-width: 360px;
         transform: translate(-150%);
-        background: var(--white-color);
+        background: var(--color-white);
         opacity: 0.95;
         &:focus {
           outline: none;

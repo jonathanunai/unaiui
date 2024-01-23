@@ -1,5 +1,5 @@
 <template>
-  <header class="video-header coverer">
+  <div class="video-wrapper coverer">
     <video
       id="bgvid"
       playsinline
@@ -12,14 +12,14 @@
       <source :src="`${video}.webm`" type="video/webm" />
       <source :src="`${video}.mp4`" type="video/mp4" />
     </video>
-    <div class="viewport-header coverer">
+    <div class="viewport-fullscreen coverer">
       <h1>
         {{ props.title }}
         <span> {{ props.subtitle }} </span>
       </h1>
       <slot></slot>
     </div>
-  </header>
+  </div>
 </template>
 <script setup>
 const props = defineProps({
@@ -40,13 +40,13 @@ const props = defineProps({
 });
 </script>
 <style scoped>
-.video-header {
+.video-wrapper {
   position: absolute;
   text-align: center;
   width: 100vw;
   height: 100vh;
 }
-.video-header::before {
+.video-wrapper::before {
     position:absolute;
     content:'';
     top:0;bottom:0;left:0;right:0;
@@ -59,13 +59,14 @@ video {
     background: brown;
     object-fit: cover;
 }
-.viewport-header {
+.viewport-fullscreen {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
   z-index: 2;
+  transform: translate3d(0,0,0);
 }
 h1 {
   font-family: "Syncopate", sans-serif;
@@ -76,10 +77,10 @@ h1 {
   text-align: center;
     color: var(--pal-red);
   text-shadow: 
-    1px 0px 1px #222, 0px 1px 1px #000, 
-    2px 1px 1px #222, 1px 2px 1px #000,
-    3px 2px 1px #222, 2px 3px 1px #000,
-    4px 3px 1px #222;
+    1px 0px 1px #333, 0px 1px 1px #222, 
+    2px 1px 1px #333, 1px 2px 1px #222,
+    3px 2px 1px #333, 2px 3px 1px #222,
+    4px 3px 1px #333;
 
 }
 span {
