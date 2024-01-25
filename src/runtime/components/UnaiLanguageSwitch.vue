@@ -3,14 +3,14 @@
     <NuxtLink
       v-for="locale in locales"
       :key="locale.to"
-      :to="switchLocalePath(locale.code)"
+      :to="$emit('switch', locale.code)"
     >
       [{{ locale.code }}]
     </NuxtLink>
   </div>
 </template>
 <script setup>
-const switchLocalePath = useSwitchLocalePath();
+defineEmits(["switch"]);
 const props = defineProps({
   locales: {
     type: Array,
