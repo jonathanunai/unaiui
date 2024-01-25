@@ -21,6 +21,9 @@
           </NuxtLink>
         </li>
       </ul>
+      <div class="rightSlot">
+        <slot name="right" />
+      </div>
     </div>
     <unai-slide-menu :links="props.links" />
   </nav>
@@ -73,8 +76,6 @@ const styles = computed(() => {
   };
 });
 
-
-
 </script>
 <style lang="scss" scoped>
 body {
@@ -116,6 +117,11 @@ nav {
       flex-direction: column;
     }
   }
+}
+.rightSlot {
+  position: absolute;
+  padding: 0.4rem;
+  right: 0;
 }
 
 @media (min-width: 769px) {
