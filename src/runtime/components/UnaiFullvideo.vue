@@ -13,10 +13,6 @@
       <source :src="`${video}.mp4`" type="video/mp4" />
     </video>
     <div class="viewport-fullscreen coverer">
-      <h1>
-        {{ props.title }}
-        <span> {{ props.subtitle }} </span>
-      </h1>
       <slot></slot>
     </div>
   </div>
@@ -67,26 +63,5 @@ video {
   position: relative;
   z-index: 2;
   transform: translate3d(0,0,0);
-}
-h1 {
-  font-family: "Syncopate", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3vw;
-  line-height: 1.2;
-  font-size: 3vw;
-  text-align: center;
-    color: var(--pal-red);
-  text-shadow: 
-    1px 0px 1px #333, 0px 1px 1px #222, 
-    2px 1px 1px #333, 1px 2px 1px #222,
-    3px 2px 1px #333, 2px 3px 1px #222,
-    4px 3px 1px #333;
-
-}
-span {
-  display: block;
-  font-size: 9vw;
-  letter-spacing: -1.2vw;
-  color: var(--pal-green);
 }
 </style>
