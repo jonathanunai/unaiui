@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.30
+
+[compare changes](https://github.com/jonathanunai/unaiui/compare/v0.0.29...v0.0.30)
+
+### 🏡 Chore
+
+- **release:** V0.0.29 ([f643477](https://github.com/jonathanunai/unaiui/commit/f643477))
+
+### ❤️ Contributors
+
+- Jonathan Marquez <jonathan.marquez@ellos.se>
+
 ## v0.0.29
 
 [compare changes](https://github.com/jonathanunai/unaiui/compare/v0.0.28...v0.0.29)
