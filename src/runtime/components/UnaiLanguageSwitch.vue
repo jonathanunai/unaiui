@@ -1,12 +1,13 @@
 <template>
   <div class="lang-wrapper">
-    <NuxtLink
+    <div
       v-for="locale in locales"
       :key="locale.to"
-      :to="$emit('switch', locale.code)"
+      @click="$emit('switch', locale.code)"
+      class="langLink"
     >
       [{{ locale.code }}]
-    </NuxtLink>
+    </div>
   </div>
 </template>
 <script setup>
@@ -23,7 +24,8 @@ const props = defineProps({
   display: flex;
   justify-content: space-between;
 }
-a {
+.langLink {
+  cursor: pointer;
   color: #fff;
   text-decoration: none;
   font-weight: 700;

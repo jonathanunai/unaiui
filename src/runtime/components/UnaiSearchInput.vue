@@ -9,7 +9,7 @@
       id="searchWhyto"
       ref="searchWhyto"
       type="search"
-      placeholder="Search..."
+      :placeholder="searchText"
       required
       :value="model"
       @input="(evt) => (model = evt.target.value)"
@@ -21,8 +21,15 @@
 <script setup>
 import { useFocus } from "@vueuse/core";
 
-import { defineModel, ref, watch } from "vue";
+import { defineModel, ref, defineProps } from "vue";
 
+const props = defineProps({
+  searchText: {
+    type: String,
+    required: false,
+    default: "Search...",
+  },
+});
 const model = defineModel();
 const searchWhyto = ref();
 const slotLayer = ref();
