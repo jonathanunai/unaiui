@@ -20,6 +20,7 @@
 </template>
 <script setup>
 import {gsap} from "gsap";
+import { computed, defineProps, defineEmits, onMounted } from "vue";
 defineEmits(["shareTo", "close"]);
 const props = defineProps({
   items: {
