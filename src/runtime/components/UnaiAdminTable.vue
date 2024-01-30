@@ -78,6 +78,14 @@ function viewItem(itemId) {
 }
 </script>
 <style lang="scss" scoped>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  thead {
+    background-color: #eee;
+  }
+}
 tr {
   position: relative;
 }
@@ -93,6 +101,7 @@ td {
     height: 100%;
     align-items: center;
     position: absolute;
+    font-size: 1.2rem;
     svg {
       margin: 0 0.1rem;
       cursor: pointer;
@@ -103,6 +112,6 @@ svg.exists {
   color: green;
 }
 svg.not-exists {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.2);
 }
 </style>
