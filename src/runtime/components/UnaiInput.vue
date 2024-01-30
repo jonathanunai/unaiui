@@ -3,6 +3,7 @@
     <component
       :is="formComponent"
       v-model="model"
+      :value="model"
       v-bind="attrs"
       @input="(evt) => (model = evt.target.value)"
     />
@@ -10,7 +11,7 @@
   </div>
 </template>
 <script setup>
-import { computed } from "vue";
+import { computed, watch, defineModel } from "vue";
 
 const model = defineModel();
 
@@ -52,6 +53,14 @@ const attrs = computed(() => {
 const formComponent = computed(() => {
   return props.type === 'textarea' ? 'textarea' : 'input';
 });
+
+watch(
+  () => model.value,
+  (n) => {
+    console.log(n);
+  }
+);
+
 </script>
 <style lang="scss">
 .input-wrapper {
