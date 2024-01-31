@@ -37,7 +37,7 @@ const props = defineProps({
 </script>
 <style scoped>
 .video-wrapper {
-  position: absolute;
+  position: relative;
   text-align: center;
   width: 100vw;
   height: 100vh;
