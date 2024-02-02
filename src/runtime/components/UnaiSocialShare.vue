@@ -95,7 +95,7 @@ onMounted(() => {
 </script>
 <style scoped>
 .social-share__wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   justify-content: space-between;
