@@ -1,5 +1,5 @@
 <template>
-  <div class="video-wrapper coverer">
+  <div class="video-wrapper coverer" :style="{ height: height }">
     <video
       id="bgvid"
       playsinline
@@ -33,6 +33,11 @@ const props = defineProps({
     required: false,
     default: "",
   },
+  height: {
+    type: Number,
+    required: false,
+    default: 100,
+  },
 });
 </script>
 <style scoped>
@@ -43,17 +48,29 @@ const props = defineProps({
   height: 100vh;
 }
 .video-wrapper::before {
-    position:absolute;
-    content:'';
-    top:0;bottom:0;left:0;right:0;
-    background-image: linear-gradient(22deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
-    background-size: 4px 4px;
-    z-index: 1;
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+    22deg,
+    #000 25%,
+    transparent 25%,
+    transparent 50%,
+    #000 50%,
+    #000 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 4px 4px;
+  z-index: 1;
 }
 
 video {
-    background: brown;
-    object-fit: cover;
+  background: brown;
+  object-fit: cover;
 }
 .viewport-fullscreen {
   display: flex;
@@ -62,6 +79,6 @@ video {
   flex-direction: column;
   position: relative;
   z-index: 2;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 }
 </style>

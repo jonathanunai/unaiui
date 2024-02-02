@@ -11,8 +11,7 @@
     </div>
   </div>
 </template>
-<script setup>
-</script>
+<script setup></script>
 <style>
 .footer-wrapper {
   width: 100%;
@@ -23,7 +22,10 @@
 }
 .prefooter {
   padding: 2rem;
-  background-color: #ccaabb;
+  background: #abbaab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-align: center;
 }
 .footer {
   padding: 2rem;
